@@ -44,10 +44,11 @@ app.get('/calculate-tax', (req, res) => {
 });
 
 const estimateDelivery = (shippingMethod, distance) => {
+  let result;
   if (shippingMethod === 'express') {
-    return ( distance / 100);
+    return (result = distance / 100);
   } else {
-    return ( distance / 50);
+    return (result = distance / 50);
   }
 };
 
