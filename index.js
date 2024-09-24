@@ -23,7 +23,7 @@ const membershipDiscount = (cartTotal, isMember) => {
   if (isMember) {
     return cartTotal - (cartTotal * 10) / 100;
   } else {
-    return 'no discount is applied';
+    return cartTotal;
   }
 };
 
@@ -44,11 +44,10 @@ app.get('/calculate-tax', (req, res) => {
 });
 
 const estimateDelivery = (shippingMethod, distance) => {
-  let result;
   if (shippingMethod === 'express') {
-    return (result = distance / 100);
+    return ( distance / 100);
   } else {
-    return (result = distance / 50);
+    return ( distance / 50);
   }
 };
 
